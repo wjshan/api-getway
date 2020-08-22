@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 # Author: weijia shan
 # Email: wjshan@goodoss.com
-# Time: 2020-07-24 15:11
+# Time: 2020-07-26 21:09
 # Description: 
 # //////////////////////////////////////////////////////////////////#
 # /                          _ooOoo_                               /#
@@ -26,9 +26,13 @@
 # /            佛祖保佑       永不宕机     永无BUG                    /#
 # //////////////////////////////////////////////////////////////////#
 
-from . import login
-from . import server_register
-from . import statistics
-from . import suagger
-from . import users
-from . import user_role
+def func_a():
+    return 1
+
+
+a = func_a
+a.t = 1
+v = func_a
+v.t = 2
+print(a.t)
+print(v.t)

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*
 # Author: weijia shan
 # Email: wjshan@goodoss.com
-# Time: 2020-07-24 15:11
+# Time: 2020-07-25 22:27
 # Description: 
 # //////////////////////////////////////////////////////////////////#
 # /                          _ooOoo_                               /#
@@ -26,9 +26,11 @@
 # /            佛祖保佑       永不宕机     永无BUG                    /#
 # //////////////////////////////////////////////////////////////////#
 
-from . import login
-from . import server_register
-from . import statistics
-from . import suagger
-from . import users
-from . import user_role
+from base_plate import api_schema as api
+
+
+class Login(api.Model):
+    user_name = api.String(required=True)
+    password = api.String(required=True)
+
+

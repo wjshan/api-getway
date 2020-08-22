@@ -36,19 +36,12 @@ from base_plate import Config
 from base_plate.tools import cpu_count
 
 config = Config()
-app = get_app(config)
+app, register = get_app(config)
 
-
-@app.middleware('request')
-async def request_hander(request):
-    pid = os.getpid()
-    logger.info(f"[{pid}] get request")
-    if request.method == 'OPTIONS':
-        return
-    return json({'code': 200, 'data': {}, 'error_message': ''})
 
 
 def run():
+    from . import controllers
     app.run('0.0.0.0', 8000, workers=config.get('works') or cpu_count())
 
 
